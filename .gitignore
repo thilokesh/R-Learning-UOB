@@ -1,4 +1,14 @@
-.Rproj.user
 .Rhistory
-.RData
 .Ruserdata
+
+# RStudio files
+.Rproj.user/
+*.Rproj.user
+
+# Session Data files
+.RData
+.rds
+
+# Temporary files
+*~
+.DS_Store
