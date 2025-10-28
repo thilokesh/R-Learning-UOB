@@ -1,0 +1,127 @@
+---
+title: "Assignment_01"
+author: "Thilokesh"
+date: "2025-10-28"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## 1. Create A Dataframe
+Performed the following Steps in Rstudio Console:
+
+- animals = c("Snake","Ostrich","Cat","Spider")
+- num_legs = c(0,2,4,8)
+- animals_df = data.frame(animals,num_legs)
+
+## 2. Checking and Deleting Objects
+- ls() # Lists all the variables in the environment(list of variables by name)
+- ?rm  # To get the help document on rm
+- rm(num_legs) # Removes the variable from the environment
+- ls() # Now only two variables remain.
+- rm(list=ls()) # will remove all the variables in the current environment
+
+## 3. Creating a Data Frame in R Scripts
+Done in "myFirstRScript.R"
+
+## 4. Creating a Data Frame in R Markdown
+- Creating the Data Frame :
+```{r Creating the Data Frame}
+animals = c("Snake","Ostrich","Cat","Spider")
+num_legs = c(0,2,4,8)
+animals_df = data.frame(animals,num_legs)
+```
+- Displaying the Data Frame (echo=FALSE):
+```{r Displaying the DataFrame, echo=FALSE}
+show(animals_df)
+```
+
+## 5. Matrix Operations
+- Creating a matrix (include=FALSE)
+```{r Creating A Matrix x_vect, include=FALSE}
+x_vect = seq(from=12,to=2,by=-2)
+```
+- Show x_vect that is created above
+```{r Show x_vect, echo=FALSE}
+x_vect
+```
+- Converting the previous vector into Matrix X
+```{r Converting vector to Matrix X}
+X = matrix(data=x_vect,nrow = 2, ncol = 3)
+X
+```
+- Creating a Matrix Y with seq function
+```{r Creating a Matrix Y with seq func }
+Y = matrix(seq(4), 2, 2)
+Y
+```
+- Creating another Matrix Z 
+```{r Creating another Matrix Z}
+Z = matrix(seq(4,10,2), 2, 2)
+Z
+```
+- Transposing the Matrix Y and Z
+```{r Transposing the Matrix Y and Z}
+t(Y)
+t(Z)
+```
+- Commutative operation in Matrix
+```{r Commutative operation}
+Y+Z
+Z+Y
+```
+- Checking what happens when we do Y*Z
+```{r Dot Product}
+Y*Z
+```
+- Computing the proper Matrix Multiplication
+```{r Proper Matrix Multiplication}
+Y %*% Z
+```
+- Checking what happens when we try XY? R tries to search for variable XY as it does not understand that by XY we want it to multiply X and Y.
+  * Error in h(simpleError(msg, call)) : 
+  error in evaluating the argument 'object' in selecting a method for function 'show': object 'XY' not found
+- Matrix Inverse ($Y^{-1}$)
+```{r Using solve func to compute matrix inverse}
+solve(Y)
+```
+- Computing $Y^{-1}Y$
+```{r Y inverse Y}
+solve(Y)%*%Y
+```
+- Computing $Y^{-1}X$
+```{r Y Inverse X}
+solve(Y)%*%X
+```
+- Computing $Y^{-1}X$ with out actually calculating $Y^{-1}$
+```{r}
+solve(Y,X)
+```
+Explanation:
+
+  * If Y * result = X, then result = Y^-1 * X
+  * So solve(Y, X) finds the result that satisfies Y * result = X
+  * That result IS Y^-1 * X, but R never actually computes Y^-1
+
+## 6. Creating A Function in R Script
+Done in "functions.R"
+
+## 7. Further R Markdown exercises
+Done in file "R_Markdown_Exercises.Rmd"
+
+## 8. Version Control with Git.
+
+
+
+
+
+
+
+
+
+
+
+
+

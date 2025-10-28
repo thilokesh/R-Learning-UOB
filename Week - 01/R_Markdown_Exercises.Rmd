@@ -1,0 +1,32 @@
+---
+title: "R_Markdown_Exercises"
+author: "Thilokesh"
+date: "2025-10-28"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Wave Plot
+```{r creating vector x, include=FALSE}
+x = seq(0,20,0.01)
+```
+```{r creating vector y, include=FALSE}
+y=seq(length(x))
+for (i in y)
+  y[i] = sin(x[i])
+```
+```{r creating the dataframe,include=FALSE}
+sin_df = data.frame(x,y)
+```
+## Inspecting the data
+```{r inspecting the data, echo=FALSE}
+head(sin_df,3)
+```
+## Plotting
+```{r plotting the graph, echo=FALSE}
+plot(x,y)
+```
+$$\sin^2(x)+\cos^2(x)=1$$
